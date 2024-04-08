@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Brechó</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <style>
+        main {
+            width: 97%;
+            height: 100%;
+        }
+
+    </style>
+
+    <%- include ('partials/header') %>
+
+    <div class="content">
+        <main>
+            <a href="./formProduct.ejs">
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="../img/create.png" alt="">
+                </div>
+                <div class="product-card-content">
+                    <p>Criar um novo produto</p>
+                </div>
+            </div>
+            </a>
+
+            <% products.forEach(product => { %>
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="<%= product.URL %>" alt="">
+                </div>
+                <div class="product-card-content">
+                    <h2><%= product.name %></h2>
+                    <p><%= product.description %></p>
+                </div>
+            </div>
+            <% }) %>
+        </main>
+    </div>
+</body>
+</html>
